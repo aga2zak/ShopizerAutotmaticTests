@@ -4,7 +4,7 @@ import pl.infoshare.dataModels.Address;
 import pl.infoshare.dataModels.Bag;
 import pl.infoshare.dataModels.Payment;
 import pl.infoshare.dataModels.RegisteredUser;
-import pl.infoshare.generators.BagGenerator;
+
 
 public class App
 {

@@ -12,6 +12,8 @@ import pl.infoshare.pages.PurchaseSelectorsDirect;
 import pl.infoshare.utils.FindByElement;
 import pl.infoshare.utils.SetBrowser;
 
+import java.util.InputMismatchException;
+
 public class PurchaseTest {
 
     private PurchaseSelectorsDirect element;
@@ -55,9 +57,13 @@ public class PurchaseTest {
         element.getEmailTextInput().sendKeys(user.getEmail());
         element.getPhoneNumberTextInput().sendKeys(user.getPhoneNumber());
         element.getSubmitOrderButton().safeClick();
-        //element.getOrderIdLabelText().getInput();
 
+        try {
+            element.getOrderIdLabelText().getInput();
+        }
+        catch(RuntimeException e) {
+            System.out.println(e);
+        }
         System.out.println(element.getOrderIdLabelText().getInput());
-
     }
 }

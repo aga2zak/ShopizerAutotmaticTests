@@ -16,9 +16,10 @@ public class BagGenerator extends RandomGenerator {
     private static Bag vintageBeachBag = new Bag( "Beach bags", "Beach","Vintage beach bag", true, 60, 1, 20, 30, 8);
     private static Bag VintageLaptopBag = new Bag( "Laptop bags", "Vintage","Vintage laptop bag", true, 78, 2, 18, 20, 4);
     private static Bag vintageBagWithLeatherBands = new Bag( "Bags", "Retro","Vintage bag with leather bands", true, 68, 1, 19, 27, 4);
+    private static List<Bag> bagList;
 
-    public  List<Bag> listAllBag() {
-        List<Bag> bagList = new ArrayList<>();
+    static   {
+        bagList = new ArrayList<>();
         bagList.add(vintageExotikCarryBag);
         bagList.add(multiUseHandBag);
         bagList.add(vintageBag);
@@ -30,12 +31,11 @@ public class BagGenerator extends RandomGenerator {
         bagList.add(VintageLaptopBag);
         bagList.add(vintageBagWithLeatherBands);
 
-        return  bagList;
     }
 
     public  List<Bag> listCategoryBag(String category) {
         List<Bag> bagCategoryList = new ArrayList<>();
-        for (Bag bag : listAllBag()) {
+        for (Bag bag : bagList) {
             if (bag.getCategory().equals(category)) {
                 bagCategoryList.add(bag);
             }
@@ -45,7 +45,7 @@ public class BagGenerator extends RandomGenerator {
 
     public  List<Bag> listCollectionBag(String category, String collection) {
         List<Bag> bagCollectionList = new ArrayList<>();
-        for (Bag bag : listAllBag()) {
+        for (Bag bag : bagList) {
             if (bag.getCategory().equals(category) && bag.getCollection().equals(collection)) {
                 bagCollectionList.add(bag);
             }
@@ -54,7 +54,7 @@ public class BagGenerator extends RandomGenerator {
     }
 
     public  Bag generateRandomBag() {
-        Bag randomBag = listAllBag().get(generateRandomNumber(0, (listAllBag().size()-1)));
+        Bag randomBag = bagList.get(generateRandomNumber(0, (bagList.size()-1)));
         return randomBag;
     }
 
