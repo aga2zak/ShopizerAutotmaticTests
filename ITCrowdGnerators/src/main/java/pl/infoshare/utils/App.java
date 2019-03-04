@@ -17,12 +17,12 @@ public class App
         Bag bagForCategory = new Bag("Beach bags");
         Bag bagForCollection = new Bag("Handbags", "Chic");
 
-        System.out.println(payment.paymentData());
-        System.out.println(address.addressData());
-        System.out.println(user.userData());
-        System.out.println(bag.bagItem());
-        System.out.println(bagForCategory.bagItem());
-        System.out.println(bagForCollection.bagItem());
+        System.out.println(payment.toString());
+        System.out.println(address.toString());
+        System.out.println(user.toString());
+        System.out.println(bag.toString());
+        System.out.println(bagForCategory.toString());
+        System.out.println(bagForCollection.toString());
 
     }
 

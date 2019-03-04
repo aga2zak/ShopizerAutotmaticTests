@@ -68,8 +68,8 @@ public class Bag {
     }
 
 
-
-    public String bagItem() {
+    @Override
+    public String toString() {
         return  "Bag{" +
                 "category=" + category+ '\'' +
                 ", collection='" + collection + '\'' +

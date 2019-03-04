@@ -25,14 +25,14 @@ public class RegisteredUser extends UserBase{
             new RegisteredUser();
         }
     }
-
-    public String userData() {
+    @Override
+    public String toString() {
         return "User{firstname='"
                 + this.firstname  + '\'' + ", lastname='"
                 + this.lastname + '\'' + ", \n address='"
-                + this.address.addressData() + '\'' + ", phoneNumber='"
+                + this.address.toString() + '\'' + ", phoneNumber='"
                 + this.phoneNumber + '\'' + ", \n shippingAddress='"
-                + this.shippingAddress.addressData() + '\'' + ", email='"
+                + this.shippingAddress.toString() + '\'' + ", email='"
                 + this.email + '\'' + '}';
     }
 

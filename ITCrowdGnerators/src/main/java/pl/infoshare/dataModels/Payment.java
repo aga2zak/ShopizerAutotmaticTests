@@ -27,7 +27,8 @@ public class Payment {
             this.postalCode = "J4B 0A4";
         }
 
-        public String paymentData() {
+    @Override
+    public String toString() {
             return "Payment{name='"
                     + this.name + '\'' + ", streetAddress='"
                     + this.streetAddress + '\'' + ", city='"
